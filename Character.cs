@@ -6,7 +6,7 @@
     public class Character
     {
         public string? Name { get; set; }
-        public int Level { get; set; }
+        //public int Level { get; set; }
         public int Xp { get; set; }
         public Role Role { get; set; }
         public Race Race { get; set; }
@@ -14,8 +14,13 @@
 
         public void Show()
         {
-            Console.WriteLine($"\n***Character***\n{Name} the {Role}\tLevel: {Level} ({Xp} xp)\n");
+            Console.WriteLine($"\n***Character***\n{Name} the {Role}\tLevel: {GetLevel()} ({Xp} xp)\n");
             if (Attributes != null) Attributes.Show();
+        }
+
+        public int GetLevel()
+        {
+            return (Xp / 100) + 1;
         }
     }
 }

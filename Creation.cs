@@ -59,7 +59,7 @@
 
         private void CreateCharacter()
         {
-            Character character = new Character() { Level = 1, Xp = 0, Attributes = attributes };
+            Character character = new Character() { Xp = 350, Attributes = attributes };
 
             PickARole(character);
 
@@ -78,7 +78,7 @@
             {
                 case ConsoleKey.Y:
                     Console.WriteLine($"{character.Name} have been added to the party.");
-
+                    data.Party.Add(character);
                     break;
                 case ConsoleKey.N:
                     Console.WriteLine($"You waved goodbye to {character.Name} as he left for other adventures.");
@@ -86,7 +86,6 @@
                 default:
                     break;
             }
-            data.Party.Add(character);
 
             attributes = null;
         }

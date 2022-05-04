@@ -12,22 +12,22 @@
         }
 
         //TODO Show result bool?
-        public static int RollDices(int dices, int sides)
+        public static int RollDices(int dice, int sides)
         {
             Random random = new Random();
             int total = 0;
-            if (dices == 1) total = random.Next(0, sides) + 1;
+            if (dice == 1) total = random.Next(0, sides) + 1;
             else
             {
-                for (int i = 0; i < dices; i++)
+                for (int i = 0; i < dice; i++)
                 {
-                    int dice = random.Next(0, sides) + 1;
-                    Console.Write($" {dice}");
-                    total += dice;
+                    int die = random.Next(0, sides) + 1;
+                    Console.Write($" {die}");
+                    total += die;
                 }
                 Console.Write(" = ");
             }
-            Tools.TextColor(total, dices, dices * sides);
+            Tools.TextColor(total, dice, dice * sides);
             return total;
         }
     }
